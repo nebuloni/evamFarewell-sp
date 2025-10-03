@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Test</title>
+</head>
+<body>
+    <h1>Audio Test</h1>
+    <button id="testBtn">Test Audio</button>
+    <div id="status"></div>
+    
+    <audio id="testAudio" preload="auto" src="assets/audio/music.mp3"></audio>
+    
+    <script>
+        const btn = document.getElementById('testBtn');
+        const audio = document.getElementById('testAudio');
+        const status = document.getElementById('status');
+        
+        btn.addEventListener('click', async () => {
+            status.innerHTML = 'Testing audio...';
+            console.log('Audio src:', audio.src);
+            console.log('Audio readyState:', audio.readyState);
+            
+            try {
+                audio.volume = 0.5;
+                audio.currentTime = 0;
+                await audio.play();
+                status.innerHTML = '✅ Audio working!';
+                console.log('Audio playing successfully');
+            } catch (err) {
+                status.innerHTML = '❌ Audio failed: ' + err.message;
+                console.error('Audio failed:', err);
+            }
+        });
+    </script>
+</body>
+</html>

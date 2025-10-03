@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dance Party</title>
+    <link rel="preload" as="image" href="assets/dancers/dancer1.gif">
+    <link rel="preload" as="image" href="assets/dancers/dancer2.gif">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div id="app">
+        <header class="topbar">
+            <h1>Despedida</h1>
+            <div class="event-info">
+                <div class="date">30 de octubre</div>
+                <div class="address">33 oeste, piso 1</div>
+            </div>
+        </header>
+
+        <main id="stage" aria-live="polite">
+            <!-- Dancers injected here -->
+            <div id="dancers"></div>
+            <!-- Road signs injected here -->
+            <div id="signs"></div>
+
+            <!-- Scary overlay -->
+            <div id="scaryOverlay" aria-hidden="true">
+                <div class="scary-face" role="img" aria-label="Scary face">
+                    <!-- Simple SVG scary face so no extra asset needed -->
+                    <svg viewBox="0 0 200 200" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <radialGradient id="grad" cx="50%" cy="50%" r="60%">
+                                <stop offset="0%" stop-color="#330000"/>
+                                <stop offset="100%" stop-color="#000000"/>
+                            </radialGradient>
+                        </defs>
+                        <circle cx="100" cy="100" r="95" fill="url(#grad)" stroke="#700" stroke-width="4"/>
+                        <ellipse cx="65" cy="80" rx="18" ry="22" fill="#eee"/>
+                        <ellipse cx="135" cy="80" rx="18" ry="22" fill="#eee"/>
+                        <circle cx="65" cy="85" r="8" fill="#111"/>
+                        <circle cx="135" cy="85" r="8" fill="#111"/>
+                        <path d="M35 135 Q100 175 165 135" fill="none" stroke="#c00" stroke-width="12" stroke-linecap="round"/>
+                        <path d="M35 135 Q100 155 165 135" fill="none" stroke="#800" stroke-width="6" stroke-linecap="round"/>
+                        <g transform="translate(0,0)">
+                            <path d="M55 50 q10 -15 20 0" stroke="#900" stroke-width="5" fill="none"/>
+                            <path d="M125 50 q10 -15 20 0" stroke="#900" stroke-width="5" fill="none"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bottombar">
+        </footer>
+    </div>
+
+    <!-- Audio elements (user-gesture started in script) -->
+    <audio id="bgm" preload="auto" loop playsinline src="assets/audio/music.mp3"></audio>
+    <audio id="scream" preload="auto" src="assets/audio/scream.mp3"></audio>
+
+    <script src="script.js"></script>
+    <noscript>Enable JavaScript for the full experience.</noscript>
+</body>
+</html>
+
+
