@@ -22,26 +22,30 @@ body {
 
 .topbar {
     background: rgba(0,0,0,0.3);
-    padding: 1rem;
+    padding: 0.2rem 1rem;
     text-align: center;
     position: relative;
     z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .topbar h1 {
     font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-.event-info {
-    text-align: center;
+    margin: 0;
 }
 
 .date {
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--text-light);
-    margin-bottom: 0.25rem;
 }
 
 .address {
@@ -142,7 +146,7 @@ body {
 
 .bottombar {
     background: rgba(0,0,0,0.3);
-    padding: 1rem;
+    padding: 0.2rem;
     text-align: center;
     font-size: 0.9rem;
 }
