@@ -317,14 +317,14 @@ function updateVisitorCount() {
     console.log(`Visitor count: ${count}`);
 }
 
-// Secret key combination to show/hide counter (Cmd+Shift+V on Mac)
+// Secret key combination to show/hide counter (Option+Cmd+Z on Mac)
 let keySequence = [];
 document.addEventListener('keydown', (e) => {
     keySequence.push(e.key);
     if (keySequence.length > 3) keySequence.shift(); // Keep only last 3 keys
     
-    // Check for Cmd+Shift+V combination (Mac) or Ctrl+Shift+V (Windows/Linux)
-    if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key === 'V') {
+    // Check for Option+Cmd+Z combination (Mac) or Alt+Ctrl+Z (Windows/Linux)
+    if ((e.metaKey || e.ctrlKey) && e.altKey && e.key === 'Z') {
         const counter = document.getElementById('visitorCounter');
         if (counter) {
             counter.style.display = counter.style.display === 'none' ? 'block' : 'none';
