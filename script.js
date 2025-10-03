@@ -89,7 +89,7 @@ function createDancer(src, index) {
     div.style.height = size + 'px';
     div.style.position = 'absolute';
     div.style.left = Math.random() * (window.innerWidth - size) + 'px';
-    div.style.top = (Math.random() * (window.innerHeight - 300) + 14) + 'px'; // 12px more movement area on top
+    div.style.top = (Math.random() * (window.innerHeight - 300) + 4) + 'px'; // 10px more movement area on top
     div.style.zIndex = '1';
     
     // Add initial velocity
@@ -109,7 +109,7 @@ function createSign(text, index) {
     div.style.height = '80px';
     div.style.position = 'absolute';
     div.style.left = Math.random() * (window.innerWidth - 200) + 'px';
-    div.style.top = (Math.random() * (window.innerHeight - 300) + 14) + 'px'; // 12px more movement area on top
+    div.style.top = (Math.random() * (window.innerHeight - 300) + 4) + 'px'; // 10px more movement area on top
     div.style.fontSize = '14px';
     div.style.zIndex = '1';
     
@@ -155,9 +155,9 @@ function animate() {
             el.style.left = newLeft + 'px';
         }
         
-        if (newTop <= 14 || newTop >= window.innerHeight - actualHeight - 70) { // 70px less movement area at bottom
+        if (newTop <= 4 || newTop >= window.innerHeight - actualHeight - 80) { // 10px more on top, 10px less at bottom
             el.vy *= -0.8; // Bounce with some energy loss
-            el.style.top = Math.max(14, Math.min(window.innerHeight - actualHeight - 70, newTop)) + 'px';
+            el.style.top = Math.max(4, Math.min(window.innerHeight - actualHeight - 80, newTop)) + 'px';
         } else {
             el.style.top = newTop + 'px';
         }
@@ -187,9 +187,9 @@ function animate() {
             el.style.left = newLeft + 'px';
         }
         
-        if (newTop <= 14 || newTop >= window.innerHeight - 80 - 70) { // 70px less movement area at bottom
+        if (newTop <= 4 || newTop >= window.innerHeight - 80 - 80) { // 10px more on top, 10px less at bottom
             el.vy *= -0.8; // Bounce with some energy loss
-            el.style.top = Math.max(14, Math.min(window.innerHeight - 80 - 70, newTop)) + 'px';
+            el.style.top = Math.max(4, Math.min(window.innerHeight - 80 - 80, newTop)) + 'px';
         } else {
             el.style.top = newTop + 'px';
         }
