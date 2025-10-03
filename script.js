@@ -155,9 +155,9 @@ function animate() {
             el.style.left = newLeft + 'px';
         }
         
-        if (newTop <= 14 || newTop >= window.innerHeight - actualHeight) { // 12px more movement area on top
+        if (newTop <= 14 || newTop >= window.innerHeight - actualHeight - 70) { // 70px less movement area at bottom
             el.vy *= -0.8; // Bounce with some energy loss
-            el.style.top = Math.max(14, Math.min(window.innerHeight - actualHeight, newTop)) + 'px';
+            el.style.top = Math.max(14, Math.min(window.innerHeight - actualHeight - 70, newTop)) + 'px';
         } else {
             el.style.top = newTop + 'px';
         }
@@ -187,9 +187,9 @@ function animate() {
             el.style.left = newLeft + 'px';
         }
         
-        if (newTop <= 14 || newTop >= window.innerHeight - 80) { // 12px more movement area on top
+        if (newTop <= 14 || newTop >= window.innerHeight - 80 - 70) { // 70px less movement area at bottom
             el.vy *= -0.8; // Bounce with some energy loss
-            el.style.top = Math.max(14, Math.min(window.innerHeight - 80, newTop)) + 'px';
+            el.style.top = Math.max(14, Math.min(window.innerHeight - 80 - 70, newTop)) + 'px';
         } else {
             el.style.top = newTop + 'px';
         }
