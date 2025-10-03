@@ -35,6 +35,13 @@ body {
     margin: 0;
 }
 
+.address {
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-top: 0.25rem;
+}
+
 .controls {
     display: flex;
     gap: 1rem;
