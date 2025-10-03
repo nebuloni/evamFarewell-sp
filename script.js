@@ -296,10 +296,48 @@ function startMusic() {
 document.addEventListener('click', startMusic);
 document.addEventListener('touchstart', startMusic);
 
+// Visitor Counter (Hidden by default)
+function updateVisitorCount() {
+    // Get current count from localStorage
+    let count = parseInt(localStorage.getItem('visitorCount')) || 0;
+    
+    // Check if this is a new visitor (not in sessionStorage)
+    if (!sessionStorage.getItem('hasVisited')) {
+        count++;
+        localStorage.setItem('visitorCount', count);
+        sessionStorage.setItem('hasVisited', 'true');
+    }
+    
+    // Update the display
+    const counterElement = document.getElementById('visitorCount');
+    if (counterElement) {
+        counterElement.textContent = count;
+    }
+    
+    console.log(`Visitor count: ${count}`);
+}
+
+// Secret key combination to show/hide counter (Cmd+Shift+V on Mac)
+let keySequence = [];
+document.addEventListener('keydown', (e) => {
+    keySequence.push(e.key);
+    if (keySequence.length > 3) keySequence.shift(); // Keep only last 3 keys
+    
+    // Check for Cmd+Shift+V combination (Mac) or Ctrl+Shift+V (Windows/Linux)
+    if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key === 'V') {
+        const counter = document.getElementById('visitorCounter');
+        if (counter) {
+            counter.style.display = counter.style.display === 'none' ? 'block' : 'none';
+            console.log('Admin counter toggled');
+        }
+    }
+});
+
 // AUTO START ON LOAD
 window.addEventListener('load', () => {
     console.log('Page loaded, starting automatically...');
     startEverything();
+    updateVisitorCount();
 });
 
 console.log('Script loaded!');
