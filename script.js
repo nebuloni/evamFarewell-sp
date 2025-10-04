@@ -236,7 +236,7 @@ function startEverything() {
     // Create 3 signs
     const signTexts = [
         'Tráete a tus tías, abuela, vecinos… y gana un pase VIP',
-            'Arranca a las 5:30 pm, pero se aconseja llegar temprano (tipo 2:00 pm), por si se acaba la cerveza',
+            'Arranca a las 5 pm, pero se aconseja llegar temprano (tipo 2 pm), por si se acaba la cerveza',
         'Trae tus llaves para el jueguito'
     ];
     
